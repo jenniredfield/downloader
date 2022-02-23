@@ -71,7 +71,7 @@ async function download(id, duration, songUrl, title, extra) {
     });
 }
 
-async function getPlaylistSongs(playlist) {
+async function getList(playlist) {
     try {
         const songOptions = [];
         for (let i = 0; i < playlist.length; i++) {
@@ -91,11 +91,11 @@ async function getPlaylistSongs(playlist) {
             console.log('song donwloaded');
         }
     } catch (err) {
-        console.log('🚀 ~ file: index.js ~ line 72 ~ getPlaylistSongs ~ err', err);
+
     }
 }
 
-getPlaylistSongs(songs);
+getList(songs);
 
 // test function
 async function getSongsOptions(songOptions) {
@@ -106,6 +106,6 @@ async function getSongsOptions(songOptions) {
         }
         const { id, duration, tit_art, url, extra } = song;
         await download(id, duration, url, tit_art, extra);
-        console.log('song downloaded');
+        console.log('downloaded');
     }
 }
